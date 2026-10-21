@@ -34,7 +34,7 @@ namespace GameSpeed
         {
             Log = Logger;
 
-            Speed = Config.Bind("Speed", "GameSpeed", 2f,
+            Speed = Config.Bind("Speed", "GameSpeed", 1.7f,
                 new ConfigDescription("How fast the game runs (1 = normal). Speeds up animations, enemy turns and the game's own pauses. In co-op only " +
                                       "the host's value counts: every player with Game Speed runs at it while in the room. Can be changed in game " +
                                       "(F5 config manager).", new AcceptableValueRange<float>(1f, 4f)));

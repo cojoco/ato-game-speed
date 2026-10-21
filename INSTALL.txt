@@ -1,6 +1,6 @@
 GAME SPEED - install guide (Across the Obelisk, Steam, Windows)
 
-Makes the game run faster (2x by default), in single player and co-op. In
+Makes the game run faster (1.7x by default), in single player and co-op. In
 co-op the host's speed is used for everyone, so every player should install
 it: a player without it plays at normal speed and everyone waits for them.
 
