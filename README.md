@@ -2,7 +2,7 @@
 
 A small BepInEx 5 mod for **Across the Obelisk** that makes the game run faster, in single player and in co-op, so there is less idle time between turns.
 
-**Status:** built 2026-10-21, not tested in game yet.
+**Status:** single player tested on 2026-10-21 (1.7x feels right). Co-op has not been tested yet.
 
 ## What it does
 
