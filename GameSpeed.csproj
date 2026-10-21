@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>GameSpeed</AssemblyName>
+    <RootNamespace>GameSpeed</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Override with -p:GameDir=... on another machine -->
+    <GameDir>$(HOME)/.steam/steam/steamapps/common/Across the Obelisk</GameDir>
+    <ManagedDir>$(GameDir)/AcrossTheObelisk_Data/Managed</ManagedDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(GameDir)/BepInEx/core/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(GameDir)/BepInEx/core/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Assembly-CSharp"><HintPath>$(ManagedDir)/Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ManagedDir)/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ManagedDir)/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PhotonUnityNetworking"><HintPath>$(ManagedDir)/PhotonUnityNetworking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="PhotonRealtime"><HintPath>$(ManagedDir)/PhotonRealtime.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Photon3Unity3D"><HintPath>$(ManagedDir)/Photon3Unity3D.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+  <!-- Copy the built DLL straight into the game's plugins folder -->
+  <Target Name="DeployToGame" AfterTargets="Build" Condition="Exists('$(GameDir)/BepInEx/plugins')">
+    <Copy SourceFiles="$(OutputPath)GameSpeed.dll" DestinationFolder="$(GameDir)/BepInEx/plugins" />
+  </Target>
+
+</Project>

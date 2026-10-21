@@ -1,0 +1,34 @@
+GAME SPEED - install guide (Across the Obelisk, Steam, Windows)
+
+Makes the game run faster (2x by default), in single player and co-op. In
+co-op the host's speed is used for everyone, so every player should install
+it: a player without it plays at normal speed and everyone waits for them.
+
+1. Open the game folder.
+   In Steam, right-click "Across the Obelisk" > Manage > Browse local files.
+   You should see AcrossTheObelisk.exe. Keep this window open.
+
+2. Install BepInEx 5 (the mod loader). Skip this if you already use it.
+   - Go to https://github.com/BepInEx/BepInEx/releases
+   - Download the newest 5.4.x file named BepInEx_win_x64_5.4.x.x.zip
+     (NOT version 6, and NOT the x86 file).
+   - Open the zip and copy EVERYTHING inside it into the game folder, next to
+     AcrossTheObelisk.exe. You should end up with a "BepInEx" folder and a
+     "winhttp.dll" file in the game folder.
+
+3. Start the game once, wait for the main menu, then close it.
+   This creates the BepInEx\plugins folder.
+
+4. Copy GameSpeed.dll into the game folder's BepInEx\plugins folder.
+
+5. Optional: open BepInEx\config\com.cojoco.gamespeed.cfg in Notepad (it
+   appears after the first start with the mod) to change GameSpeed (1 to 4)
+   or turn on Ultrafast (single player only). Restart the game after
+   changing it.
+
+Troubleshooting
+- Nothing happens: right-click GameSpeed.dll > Properties and tick "Unblock"
+  if it is shown, then OK. Check that antivirus did not remove it.
+- Check BepInEx\LogOutput.log: it should say "Game Speed 0.1.0 loaded" and
+  a "Game speed: ..." line when the speed changes.
+- To uninstall, delete GameSpeed.dll from BepInEx\plugins.
